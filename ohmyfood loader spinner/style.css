@@ -1,11 +1,28 @@
-body {
+.loader-container {
     display: flex;
-    position: relative;
+    position: fixed;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 100%;
     width: 100%;
     background-color: black;
+    animation-name: loader;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+}
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+        z-index: 9999;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1000;
+    }
 }
 
 .loader {
@@ -35,10 +52,12 @@ body {
 .text {
     display: flex;
     position: fixed;
+    height: 120px;
+    width: 120px;
     font-family: 'Shrikhand', cursive;
-    font-size: medium;
+    font-size: larger;
     color: white;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 10px;
     justify-content: center;
     align-items: center;
